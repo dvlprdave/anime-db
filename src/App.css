@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+
+.App-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.film-title {
+  padding: 1rem 1.8rem;
+  background: yellow;
+  border-radius: 10px;
+}
+
+.film-card_body {
+  padding: 0 1.5rem;
+}
+
+.film-description {
+  text-align: left;
+}
+
+.film-footer {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.film-footer_span {
+  background: yellow;
+  padding: 5px 8px;
+  margin-right: 5px;
+}

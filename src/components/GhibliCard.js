@@ -2,20 +2,27 @@ import React from 'react'
 
 const GhibliCard = ({data}) => (
   <div className='card-container'>
-    {data.map(film => (
-      <div key={film.id}>
-        <h1 className='card-title'>{film.title}</h1>
+    {data.data.map(anime => {
 
-        <div className='card-body'>
-          <p className='card-description'>{film.description.substring(0, 200)}...</p>
+      let {
+        averageRating,
+        canonicalTitle, 
+        synopsis, 
+        coverImage: {small}, 
+        posterImage: {medium}
+      } = anime.attributes
 
-          <div className='card-footer'>
-            <p><span className='card-footer_span'>Release Date:</span>{film.release_date}</p>
-          </div>
+      return(
+      <div key={anime.id}>
+
+        <div>
+          <img src={medium} alt='Poster'/>
+          <h1 className='card-title'>{canonicalTitle}</h1>
+          <p className='card-description'>{synopsis.substring(0, 300)}...</p>
         </div>
-        
       </div>
-    ))}
+      )
+    })}
   </div>
 )
 
